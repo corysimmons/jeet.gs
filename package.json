@@ -18,8 +18,11 @@
   },
   "scripts": {
     "start": "npm-run-all -p stylus pug uglify browser-sync cssnano",
+    "build": "npm-run-all build:stylus build:cssnano imagemin",
     "stylus": "stylus -u axis -u jeet -u autoprefixer-stylus -u rupture -w src/assets/css/master.styl -o ./dist/css",
-    "cssnano": "chokidar dist/css/master.css -c 'cssnano dist/css/master.css dist/css/master.min.css'",
+    "build:stylus": "stylus -u axis -u jeet -u autoprefixer-stylus -u rupture src/assets/css/master.styl -o ./dist/css",
+    "cssnano": "chokidar dist/css/master.css -c 'npm run build:cssnano'",
+    "build:cssnano": "cssnano dist/css/master.css dist/css/master.min.css",
     "uglify": "chokidar src/assets/js/*.js -c \"uglifyjs {path} -o dist/js/min.(echo {path} | cut -d '/' -f 4)\"",
     "pug": "pug -O \"{ filters: [ require('jstransformer-marked') ] }\" -w src/views/index.pug -o ./",
     "imagemin": "imagemin src/assets/img/*.* -o dist/img",
