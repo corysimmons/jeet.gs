@@ -1,0 +1,34 @@
+.github-band
+  column(1)
+  text-align: center
+  position relative
+  z-index 10
+  background dark-green
+  padding (small-padding-block - 3) 0
+.hero-ctas
+  .btn
+    float right
+    margin-left small-padding-block
+    &:hover
+      color dark-green
+  .without-border
+    margin-top 1px
+    padding-right 0
+    opacity 1
+    transition opacity .25s drawn-out-animation
+    hideAt(large-snap)
+    &:hover
+      color white
+.pushy-active .btn.without-border
+  opacity 0
+.view-api.toggle-api
+  +below(xl-snap)
+    display none
+.scrollTo-api
+  display none
+  +below(xl-snap)
+    display block
+
+.view-api
+  &:hover
+    color: #21b291

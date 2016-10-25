@@ -1,0 +1,104 @@
+.hero
+  padding xs-padding-block 0 xl-padding-block 0
+  background green
+  z-index 10
+  clearfix()
+  +below(small-snap)
+    padding (xl-padding-block + tiny-padding-block) 0 large-padding-block 0
+
+@keyframes slideDown
+  100%
+    transform: translateY(0)
+
+.announcement
+  transform: translateY(-300px)
+  animation: slideDown 1s ease forwards
+  animation-delay: 1.5s
+  max-width 500px
+  margin 0 auto large-padding-block auto
+  color white
+  padding tiny-padding-block
+  background #FFC800
+  font-weight bold
+  +below(xl-snap)
+    margin-top large-padding-block
+  +below(small-snap)
+    margin-top 0
+.headline
+  font-size headline-font
+  font-family helvetica-bold
+  font-weight normal
+  +below(small-snap)
+    font-size 2.6rem
+.nav-narrative
+  margin-top large-padding-block - 27
+  font-size large-font * 1.1
+  line-height 2.4rem
+  .inline-link
+    transition: all 400 ease
+    &:hover
+      border-bottom-color: lighten(green, 50%)
+  +below(small-snap)
+    margin-top med-padding-block - 27
+    padding 0
+    font-size 1.2rem
+    line-height 1.7rem
+.touch .grid-toggle
+  display none
+.grid-toggle
+  center()
+  display inline-block
+  clear both
+  padding-top large-padding-block - 8
+  text-decoration none
+  cursor pointer
+  user-select none
+  hideAt(med-snap)
+  .track, .handle
+    margin auto
+    border-radius 50px
+    border-box box-sizing
+  .track
+    size(448px, 83px)
+    position relative
+    color white
+    background dark-green
+    border 1px solid darken(dark-green, 10%)
+    padding (small-padding-block - 1) (med-padding-block - 2)
+  .handle
+    size(220px, 71px)
+    pos(absolute, 5px, false, false, 6px)
+    background white
+    padding-top med-padding-block + 1
+    transition left 0.25s
+.hide-grid-label, .show-grid-label
+  position absolute
+  top 0
+  line-height 80px
+  font-family open-sans
+  font-size 1.17rem
+  text-transform uppercase
+  z-index 1
+  transition color 0.25s, padding 0.25s
+.hide-grid-label
+  left 15.27%
+  color dark-green
+.show-grid-label
+  right 13.7%
+  padding-right 10px
+.grid-visible
+  .handle
+    pos(absolute, 5px, false, false, 221px)
+  .hide-grid-label
+    color white
+    padding-left 10px
+  .show-grid-label
+    color dark-green
+    padding-right 0
+.updateBrowser
+  z-index 999
+  position fixed
+  top 0
+  width 100%
+  background orange
+  color white
