@@ -1,5 +1,7 @@
 # jeet.gs
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/corysimmons/jeet.gs.svg)](https://greenkeeper.io/)
+
 - `npm i`
 - `npm start`
 - `npm run imagemin` to minify/migrate images from `src/assets/img` to `dist/img`
